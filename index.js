@@ -7,6 +7,7 @@ const LOGPATH = './app.log';
 app.get('/', (req,res) => {
 	const timestamp = new Date().toISOString();
 	fs.appendFile(LOGPATH, timestamp + " - " + req.socket.remoteAddress + "\n", (err)=>{});	
+	res.send("Hello World!");
 });
 
 app.listen(PORT, () => {
